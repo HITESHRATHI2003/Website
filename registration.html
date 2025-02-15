@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="index.css">
+  <title>Registration & Login</title>
+</head>
+
+<body>
+  <div class="container" id="signup">
+    <h1 class="form-title">Registration</h1>
+    <form id="registrationForm" action="reg.html" method="post">
+      <div class="input-group">
+        <i class="bx bxs-user"></i>
+        <input type="text" name="fName" id="fName" placeholder="First Name" required>
+      </div>
+      <div class="input-group">
+        <i class="bx bxs-user"></i>
+        <input type="text" name="lName" id="lName" placeholder="Last Name" required>
+      </div>
+      <div class="input-group">
+        <i class="bx bxs-envelope"></i>
+        <input type="email" name="Email" id="Email" placeholder="Email" required>
+      </div>
+      <div class="input-group">
+        <i class="bx bxs-lock"></i>
+        <input type="password" name="Password" id="Password" placeholder="Password" required>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    
+    <p class="or">
+      ---------------or---------------
+    </p>
+    
+    <div class="icon">
+      <i class='bx bxl-google'></i>
+      <i class='bx bxl-facebook-circle'></i>
+      <i class='bx bxl-twitter'></i>
+    </div>
+    
+    <div class="link">
+      <p>Already have an account?</p>
+      <form method="GET" action="reg.html">
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const firstName = document.getElementById('fName').value.trim();
+      const lastName = document.getElementById('lName').value.trim();
+      const email = document.getElementById('Email').value.trim();
+      const password = document.getElementById('Password').value.trim();
+
+      if (!firstName || !lastName || !email || !password) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      // Show alert for password save
+      alert("Password saved successfully.");
+
+      // Redirect to homepage after alert is closed
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

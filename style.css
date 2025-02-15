@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #004080;
+    color: white;
+    padding: 20px;
+}
+
+header img {
+    display: block;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+header p marquee {
+    font-size: 16px;
+    font-weight: bold;
+    color: yellow;
+}
+
+/* Navigation */
+nav {
+    background-color: #003366;
+    padding: 10px;
+}
+
+nav a,
+nav button {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
+    background: #00509e;
+    border-radius: 5px;
+}
+
+nav a:hover,
+nav button:hover {
+    background: #002b5c;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+/* Sections */
+section {
+    padding: 100px;
+    background-color: #b8efef;
+    border-bottom: 20px solid #f9fbf8;
+}
+
+h2 {
+    color: #07090a;
+    margin-bottom: 20px;
+}
+
+img {
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+/* List Styling */
+ol {
+    list-style-type: decimal;
+    text-align: left;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* Contact Section */
+address a {
+    color: #004080;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #003366;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+footer a {
+    color: yellow;
+    font-weight: bold;
+}

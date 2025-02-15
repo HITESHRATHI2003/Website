@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <div id="signIn">
+            <h1 class="form-title">Sign In</h1> 
+            <form id="signInForm">
+                <div class="input-group">
+                    <i class="bx bxs-envelope"></i>
+                    <label for="Email">Email</label>
+                    <input type="email" name="Email" id="Email" placeholder="Email" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="bx bxs-lock"></i>
+                    <label for="Password">Password</label>
+                    <input type="password" name="Password" id="Password" placeholder="Password" required>
+                    <i class="bx bx-show password-toggle" id="togglePassword"></i>
+                </div>
+
+                <p class="recover">
+                    <a href="#" id="recoverPassword">Recover password?</a>
+                </p>
+
+                <button type="submit">Submit</button>
+            </form>
+
+            <p class="or">---------------------- or -----------------</p>
+
+            <div class="icon">
+                <i class="bx bxl-google"></i>
+                <i class="bx bxl-facebook-circle"></i>
+                <i class="bx bxl-twitter"></i>
+            </div>
+
+            <div class="link">
+                <p>Don't have an account yet?</p>
+                <form method="GET" action="registration.html">
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signInForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('Email').value.trim();
+            const password = document.getElementById('Password').value.trim();
+
+            if (email === "" || password === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            // Dummy authentication (replace with backend validation)
+            if (email === "test@example.com" && password === "password123") {
+                alert("Login successful!");
+                window.location.href = "home.html";
+            } else {
+                alert("Incorrect email or password. Try again.");
+            }
+        });
+
+        // Password toggle
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordField = document.getElementById('Password');
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                this.classList.replace("bx-show", "bx-hide");
+            } else {
+                passwordField.type = "password";
+                this.classList.replace("bx-hide", "bx-show");
+            }
+        });
+
+        // Recover password feature (Auto-fills new password)
+        document.getElementById('recoverPassword').addEventListener('click', function() {
+            function generatePassword() {
+                const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+                let newPassword = "";
+                for (let i = 0; i < 12; i++) {
+                    newPassword += characters.charAt(Math.floor(Math.random() * characters.length));
+                }
+                return newPassword;
+            }
+            
+            const newPassword = generatePassword();
+            alert("Your new password: " + newPassword + "\nPlease update it after logging in.");
+
+            // Auto-fill new password in the input field
+            document.getElementById('Password').value = newPassword;
+                        // Redirect to home page
+                        window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>
